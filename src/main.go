@@ -14,4 +14,13 @@ func main() {
 	fmt.Println("Hello, \tGo!")
 	fmt.Println("Quotes:\"\"")
 	fmt.Println("Backslash:\\")
+
+	// rune 룬
+	fmt.Println('A')
+	fmt.Println('B')
+	fmt.Println('\t')
+
+	//boolean
+	fmt.Println(true)
+	fmt.Println(false)
 }
