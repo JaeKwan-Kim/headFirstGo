@@ -1,21 +1,19 @@
 package main
 
-import (
-	"fmt"
-	"reflect"
-)
+import "fmt"
 
 func main() {
-	myInt := 2
-	fmt.Println(reflect.TypeOf(myInt))
-	fmt.Println(reflect.TypeOf(float64(myInt)))
+	var price int = 100
+	fmt.Println("Price is", price, "dollars")
 
-	length := 1.2
-	width := 2
+	var taxRate float64 = 0.08
+	var tax float64 = float64(price) * taxRate
+	fmt.Println("Tax is", tax, "dollars.")
 
-	//length = float64(width)
-	//fmt.Println(length)
+	var total float64 = float64(price) + tax
+	fmt.Println("Total cost is", total, "dollars.")
 
-	width = int(length)
-	fmt.Println(width)
+	var availableFunds int = 120
+	fmt.Println(availableFunds, "dollars available.")
+	fmt.Println("Within budget?", total <= float64(availableFunds))
 }
