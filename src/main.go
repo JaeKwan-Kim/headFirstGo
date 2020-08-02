@@ -16,9 +16,13 @@ func main() {
 	//customerName = "Damon Cole"
 	//length, width = 1.2, 2.4
 
-	var quantity = 4
-	var customerName = "Damon Cole"
-	var length, width = 1.2, 2.4
+	//var quantity = 4
+	//var customerName = "Damon Cole"
+	//var length, width = 1.2, 2.4
+
+	quantity := 4
+	customerName := "Damon Cole"
+	length, width := 1.2, 2.4
 
 	fmt.Println(customerName)
 	fmt.Println("has ordered", quantity, "sheets")
