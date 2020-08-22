@@ -19,5 +19,5 @@ func main() {
 	total += paintNeeded(5.2, 3.5, true)
 
 	fmt.Printf("Total : %0.2f liters\n", total)
-
+	fmt.Printf("Total : %0.2f liters\n", total)
 }
