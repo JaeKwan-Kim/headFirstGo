@@ -1,31 +1,33 @@
 package main
 
 import (
-	"errors"
 	"fmt"
+	"log"
 )
 
-func paintNeeded(width float64, height float64, be_print bool) (error, float64) {
+func paintNeeded(width float64, height float64, debugPrint bool) (float64, error) {
+	if width < 0 {
+		return 0, fmt.Errorf("a whdth of %2.f is invalid", width)
+	}
+
+	if height < 0 {
+		return 0, fmt.Errorf("a height of %2.f is invalid", height)
+	}
+
 	area := width * height
 
-	if area < 0 || width < 0 {
-		err := errors.New("area OR width Can't")
-		return err, 0
+	if debugPrint == true {
+		log.Printf("%.2f liters needed", area/10.0)
 	}
 
-	if be_print == true {
-		fmt.Printf("\t %.2f liters needed\n", area/10.0)
-	}
-
-	return nil, area / 10.0
+	return area / 10.0, nil
 }
 
 func main() {
-	var total float64
-
-	_, total = paintNeeded(4.2, 3.0, true)
-	_, total = paintNeeded(5.2, 3.5, true)
-
-	fmt.Printf("Total : %0.2f liters\n", total)
-	fmt.Printf("Total : %0.2f liters\n", total)
+	amount, err := paintNeeded(4.2, 3.0, false)
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		fmt.Printf("Total : %0.2f liters\n", amount)
+	}
 }
